@@ -1,0 +1,10 @@
+       Prefix Verb   URI Pattern              Controller#Action
+     articles POST   /articles(.:format)      articles#create
+ new_articles GET    /articles/new(.:format)  articles#new
+edit_articles GET    /articles/edit(.:format) articles#edit
+              GET    /articles(.:format)      articles#show
+              PATCH  /articles(.:format)      articles#update
+              PUT    /articles(.:format)      articles#update
+              DELETE /articles(.:format)      articles#destroy
+welcome_index GET    /welcome/index(.:format) welcome#index
+         root GET    /                        welcome#index
