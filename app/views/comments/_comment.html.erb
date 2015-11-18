@@ -6,3 +6,11 @@
   <strong> comment: </strong>
   <%= comment.body %>
 </p>
+
+<p>
+  <%= link_to 'destroy all your bases',
+              [comment.article,comment ] ,
+              method: :delete,
+              data:{confirm: 'are yo sure?'}
+  %>
+</p>
