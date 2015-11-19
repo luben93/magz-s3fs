@@ -1,5 +1,5 @@
 class SqspollersController < ApplicationController
-
+#http://docs.aws.amazon.com/sdkforruby/api/Aws/SQS/Client.html#delete_message_batch-instance_method
   def show
 
     render plain: stuff().join(', ')
@@ -22,7 +22,10 @@ class SqspollersController < ApplicationController
     resp.messages.each do |msg|
       result = DoSomeMagic.call(msg)
       if result.success?
-        #delete from queue here
+        sqs_instance.delete_message({
+                                        receipt_handle: msg.receipt_handle,
+                                        queue_url: "https://sqs.eu-west-1.amazonaws.com/691289339601/Magz-Auto-Upload",
+                                    })
         recipt << msg.receipt_handle
       end
     end
