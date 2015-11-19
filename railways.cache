@@ -15,5 +15,12 @@ edit_article_comment GET    /articles/:article_id/comments/:id/edit(.:format) co
                      PATCH  /articles/:id(.:format)                           articles#update
                      PUT    /articles/:id(.:format)                           articles#update
                      DELETE /articles/:id(.:format)                           articles#destroy
+           sqspoller POST   /sqspoller(.:format)                              sqspollers#create
+       new_sqspoller GET    /sqspoller/new(.:format)                          sqspollers#new
+      edit_sqspoller GET    /sqspoller/edit(.:format)                         sqspollers#edit
+                     GET    /sqspoller(.:format)                              sqspollers#show
+                     PATCH  /sqspoller(.:format)                              sqspollers#update
+                     PUT    /sqspoller(.:format)                              sqspollers#update
+                     DELETE /sqspoller(.:format)                              sqspollers#destroy
        welcome_index GET    /welcome/index(.:format)                          welcome#index
                 root GET    /                                                 welcome#index
